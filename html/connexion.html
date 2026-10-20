@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#F0F3FA">
+    <meta name="description" content="Connecte-toi à MATHÉON pour apprendre les mathématiques à ton rythme.">
+
+    <title>Connexion — MATHÉON</title>
+
+    <!-- Feuille de style située à la racine du projet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a href="../index.html" class="brand" aria-label="Accueil MATHÉON">
+            <span class="brand-logo" aria-hidden="true">Σ</span>
+            <span class="brand-name">MATHÉON</span>
+        </a>
+
+        <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Passer au thème sombre"
+            title="Changer de thème"
+        >
+            <!-- Icône du soleil -->
+            <svg
+                id="sun-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+            >
+                <path d="M320 32C328.4 32 336.3 36.4 340.6 43.7L396.1 136.3L500.9 110C509.1 108 517.8 110.4 523.7 116.3C529.6 122.2 532 131 530 139.1L503.7 243.8L596.4 299.3C603.6 303.6 608.1 311.5 608.1 319.9C608.1 328.3 603.7 336.2 596.4 340.5L503.7 396.1L530 500.8C532 509 529.6 517.7 523.7 523.6C517.8 529.5 509 532 500.9 530L396.2 503.7L340.7 596.4C336.4 603.6 328.5 608.1 320.1 608.1C311.7 608.1 303.8 603.7 299.5 596.4L243.9 503.7L139.2 530C131 532 122.4 529.6 116.4 523.7C110.4 517.8 108 509 110 500.8L136.2 396.1L43.6 340.6C36.4 336.2 32 328.4 32 320C32 311.6 36.4 303.7 43.7 299.4L136.3 243.9L110 139.1C108 130.9 110.3 122.3 116.3 116.3C122.3 110.3 131 108 139.2 110L243.9 136.2L299.4 43.6L301.2 41C305.7 35.3 312.6 31.9 320 31.9zM320 176C240.5 176 176 240.5 176 320C176 399.5 240.5 464 320 464C399.5 464 464 399.5 464 320C464 240.5 399.5 176 320 176zM320 416C267 416 224 373 224 320C224 267 267 224 320 224C373 224 416 267 416 320C416 373 373 416 320 416z"/>
+            </svg>
+
+            <!-- Icône de la lune -->
+            <svg
+                id="moon-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                aria-hidden="true"
+                hidden
+            >
+                <path d="M303.3 112.7C196.2 121.2 112 210.8 112 320C112 434.9 205.1 528 320 528C353.3 528 384.7 520.2 412.6 506.3C309.2 482.9 232 390.5 232 280C232 214.2 259.4 154.9 303.3 112.7zM64 320C64 178.6 178.6 64 320 64C339.4 64 358.4 66.2 376.7 70.3C386.6 72.5 394 80.8 395.2 90.8C396.4 100.8 391.2 110.6 382.1 115.2C321.5 145.4 280 207.9 280 280C280 381.6 362.4 464 464 464C469 464 473.9 463.8 478.8 463.4C488.9 462.6 498.4 468.2 502.6 477.5C506.8 486.8 504.6 497.6 497.3 504.6C451.3 548.8 388.8 576 320 576C178.6 576 64 461.4 64 320z"/>
+            </svg>
+        </button>
+    </header>
+
+    <main class="page-content">
+
+        <section class="welcome">
+            <p class="eyebrow">APPRENDS À TON RYTHME</p>
+            <h1>Les maths, <span>à ta façon.</span></h1>
+            <p class="welcome-description">
+                Retrouve ton parcours, progresse à ton rythme
+                et découvre tout ce que tu es capable de faire.
+            </p>
+        </section>
+
+        <section class="auth-panels" aria-label="Accès à MATHÉON">
+
+            <!-- ==================== CONNEXION ==================== -->
+
+            <article class="auth-card" id="login-panel">
+                <div class="card-heading">
+                    <span class="card-symbol" aria-hidden="true">↗</span>
+                    <div>
+                        <h2>Connexion</h2>
+                        <p>Ravi de te revoir !</p>
+                    </div>
+                </div>
+
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-identifier">Ton identifiant</label>
+                        <input
+                            type="text"
+                            id="login-identifier"
+                            name="identifier"
+                            placeholder="Ex. : Alex123"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Ton mot de passe</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            placeholder="Ton mot de passe"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Me connecter
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                    <p
+                        class="form-message"
+                        id="login-message"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                </form>
+
+                <p class="card-note">
+                    Ton identifiant n'est pas nécessairement ton nom affiché.
+                </p>
+            </article>
+
+            <!-- ==================== INSCRIPTION ==================== -->
+
+            <article class="auth-card signup-card" id="signup-panel">
+                <div class="card-heading">
+                    <span class="card-symbol" aria-hidden="true">✦</span>
+                    <div>
+                        <h2>Inscription</h2>
+                        <p>Prêt à commencer ?</p>
+                    </div>
+                </div>
+
+                <form id="signup-form">
+
+                    <div class="form-group">
+                        <label for="signup-code">
+                            Code professeur
+                            <span class="optional">(facultatif)</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="signup-code"
+                            name="teacherCode"
+                            placeholder="Si ton professeur t'en a donné un"
+                            autocomplete="off"
+                            autocapitalize="characters"
+                        >
+
+                        <small class="field-help">
+                            Tu as un code ? Il permettra de retrouver
+                            les informations de ta classe.
+                        </small>
+                    </div>
+
+                    <div class="form-group" id="display-name-group">
+                        <label for="signup-display-name">Nom affiché</label>
+                        <input
+                            type="text"
+                            id="signup-display-name"
+                            name="displayName"
+                            placeholder="Ton prénom ou un pseudonyme"
+                            maxlength="40"
+                            autocomplete="nickname"
+                        >
+
+                        <small class="field-help" id="display-name-help">
+                            Choisis le nom que tu souhaites voir apparaître
+                            sur ton compte.
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-identifier">Choisis un identifiant</label>
+                        <input
+                            type="text"
+                            id="signup-identifier"
+                            name="identifier"
+                            placeholder="Ex. : Alex123"
+                            minlength="3"
+                            maxlength="30"
+                            pattern="[A-Za-z0-9_-]+"
+                            title="Utilise entre 3 et 30 caractères : lettres, chiffres, tirets ou tirets bas."
+                            autocomplete="username"
+                            autocapitalize="none"
+                            required
+                        >
+
+                        <small class="field-help">
+                            De 3 à 30 caractères : lettres, chiffres, _
+                            ou -.
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-password">Crée un mot de passe</label>
+                        <input
+                            type="password"
+                            id="signup-password"
+                            name="password"
+                            placeholder="Choisis un mot de passe"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                        <small class="field-help">
+                            8 caractères minimum.
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-password-confirm">
+                            Confirme ton mot de passe
+                        </label>
+                        <input
+                            type="password"
+                            id="signup-password-confirm"
+                            name="passwordConfirm"
+                            placeholder="Saisis-le une seconde fois"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Créer mon compte
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                    <p
+                        class="form-message"
+                        id="signup-message"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+                <p class="card-note">
+                    En créant ton compte, tu pourras retrouver
+                    ta progression sur MATHÉON.
+                </p>
+            </article>
+
+        </section>
+
+        <footer class="page-footer">
+            <span class="footer-sigma" aria-hidden="true">Σ</span>
+            <p>MATHÉON · Les mathématiques, pas à pas.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        "use strict";
+
+        // ==========================================
+        // 1. GESTION DU THÈME CLAIR / SOMBRE
+        // ==========================================
+
+        const themeButton = document.getElementById("theme-toggle");
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+        function applyTheme(theme) {
+            const isDark = theme === "dark";
+
+            document.documentElement.dataset.theme = theme;
+
+            sunIcon.hidden = isDark;
+            moonIcon.hidden = !isDark;
+
+            themeButton.setAttribute(
+                "aria-label",
+                isDark
+                    ? "Passer au thème clair"
+                    : "Passer au thème sombre"
+            );
+
+            themeMeta.setAttribute(
+                "content",
+                isDark ? "#091B1D" : "#F0F3FA"
+            );
+        }
+
+        // Le thème clair est utilisé par défaut.
+        // Si une préférence existe déjà, on la réutilise.
+        let savedTheme = "light";
+
+        try {
+            const storedTheme = localStorage.getItem("matheon-theme");
+
+            if (storedTheme === "light" || storedTheme === "dark") {
+                savedTheme = storedTheme;
+            }
+        } catch (error) {
+            // La page reste utilisable si le stockage est indisponible.
+        }
+
+        applyTheme(savedTheme);
+
+        themeButton.addEventListener("click", function () {
+            const currentTheme =
+                document.documentElement.dataset.theme || "light";
+
+            const nextTheme =
+                currentTheme === "light" ? "dark" : "light";
+
+            applyTheme(nextTheme);
+
+            try {
+                localStorage.setItem("matheon-theme", nextTheme);
+            } catch (error) {
+                // Le changement fonctionne même sans sauvegarde.
+            }
+        });
+
+
+        // ==========================================
+        // 2. CODE PROFESSEUR OU NOM PERSONNALISÉ
+        // ==========================================
+
+        const teacherCodeInput = document.getElementById("signup-code");
+        const displayNameInput = document.getElementById("signup-display-name");
+        const displayNameGroup = document.getElementById("display-name-group");
+        const displayNameHelp = document.getElementById("display-name-help");
+
+        function updateSignupNameField() {
+            const hasTeacherCode = teacherCodeInput.value.trim().length > 0;
+
+            if (hasTeacherCode) {
+                displayNameInput.required = false;
+                displayNameInput.disabled = true;
+                displayNameInput.value = "";
+                displayNameGroup.hidden = true;
+
+                displayNameHelp.textContent =
+                    "Le nom sera récupéré à partir du code professeur.";
+            } else {
+                displayNameInput.disabled = false;
+                displayNameInput.required = true;
+                displayNameGroup.hidden = false;
+
+                displayNameHelp.textContent =
+                    "Choisis le nom que tu souhaites voir apparaître sur ton compte.";
+            }
+        }
+
+        teacherCodeInput.addEventListener("input", updateSignupNameField);
+        updateSignupNameField();
+
+
+        // ==========================================
+        // 3. MESSAGES DES FORMULAIRES
+        // ==========================================
+
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+
+        const loginMessage = document.getElementById("login-message");
+        const signupMessage = document.getElementById("signup-message");
+
+        function showMessage(element, message, type) {
+            element.textContent = message;
+            element.dataset.type = type;
+        }
+
+        function clearMessage(element) {
+            element.textContent = "";
+            delete element.dataset.type;
+        }
+
+        loginForm.addEventListener("input", function () {
+            clearMessage(loginMessage);
+        });
+
+        signupForm.addEventListener("input", function () {
+            clearMessage(signupMessage);
+        });
+
+
+        // ==========================================
+        // 4. CONNEXION
+        // ==========================================
+
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            clearMessage(loginMessage);
+
+            const identifier = document
+                .getElementById("login-identifier")
+                .value.trim();
+
+            const password = document
+                .getElementById("login-password")
+                .value;
+
+            if (!identifier || !password) {
+                showMessage(
+                    loginMessage,
+                    "Complète les deux champs pour continuer.",
+                    "error"
+                );
+                return;
+            }
+
+            /*
+             * À connecter à Supabase.
+             * Aucune connexion réelle n'est effectuée pour le moment.
+             */
+
+            showMessage(
+                loginMessage,
+                "L'authentification Supabase reste à configurer.",
+                "info"
+            );
+        });
+
+
+        // ==========================================
+        // 5. INSCRIPTION
+        // ==========================================
+
+        signupForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            clearMessage(signupMessage);
+
+            const teacherCode = teacherCodeInput.value.trim();
+            const displayName = displayNameInput.value.trim();
+
+            const identifier = document
+                .getElementById("signup-identifier")
+                .value.trim();
+
+            const password = document
+                .getElementById("signup-password")
+                .value;
+
+            const passwordConfirm = document
+                .getElementById("signup-password-confirm")
+                .value;
+
+            if (!teacherCode && !displayName) {
+                showMessage(
+                    signupMessage,
+                    "Choisis un nom affiché ou renseigne un code professeur.",
+                    "error"
+                );
+                return;
+            }
+
+            if (!/^[A-Za-z0-9_-]{3,30}$/.test(identifier)) {
+                showMessage(
+                    signupMessage,
+                    "Ton identifiant doit contenir entre 3 et 30 lettres, chiffres, tirets ou tirets bas.",
+                    "error"
+                );
+                return;
+            }
+
+            if (password.length < 8) {
+                showMessage(
+                    signupMessage,
+                    "Ton mot de passe doit contenir au moins 8 caractères.",
+                    "error"
+                );
+                return;
+            }
+
+            if (password !== passwordConfirm) {
+                showMessage(
+                    signupMessage,
+                    "Les deux mots de passe ne correspondent pas.",
+                    "error"
+                );
+                return;
+            }
+
+            if (!teacherCode && displayName.length > 40) {
+                showMessage(
+                    signupMessage,
+                    "Ton nom affiché ne peut pas dépasser 40 caractères.",
+                    "error"
+                );
+                return;
+            }
+
+            /*
+             * À connecter à Supabase.
+             *
+             * Le code professeur devra être vérifié côté serveur.
+             * Le navigateur ne devra jamais décider seul qu'un code
+             * est valide, ni attribuer une classe à un élève.
+             */
+
+            showMessage(
+                signupMessage,
+                "Les vérifications sont prêtes. Il reste à connecter Supabase pour créer ton compte.",
+                "info"
+            );
+        });
+    </script>
+
+</body>
+</html>
